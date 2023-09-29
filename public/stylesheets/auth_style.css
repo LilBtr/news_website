@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+:root {
+  --c1: #5F93CF;
+  --c2: #4285F4;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--c1);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  background: #fff;
+  padding: 30px;
+
+  border-radius: 12px;
+
+  max-width: 400px;
+  width: 100%;
+
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.wrapper h2 {
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form div {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 5px;
+}
+
+.form div a {
+  text-decoration: none;
+  color: var(--c2);
+}
+
+.form div a:hover {
+  text-decoration: underline;
+}
+
+.checkbox {
+  gap: 5px;
+}
+
+.form div p {
+  font-weight: 500;
+  font-size: .9em;
+  opacity: .8;
+}
+
+.form div a {
+  font-weight: 500;
+  font-size: .9em;
+  opacity: .99;
+}
+
+.form > input {
+  font-size: 1em;
+
+  margin-bottom: 15px;
+  padding: 10px 15px;
+
+  border: 1px solid rgba(0,0,0,0.3);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+}
+
+.form > input:focus {
+  border-color: var(--c1);
+  outline: none;
+  transition: border .3s ease;
+}
+
+.form > p {
+  font-weight: 500;
+  font-size: .85em;
+  text-align: center;
+  opacity: .99;
+}
+
+.form > p a {
+  text-decoration: none;
+  color: var(--c2);
+  font-size: 1.04em;
+}
+
+.form > p a:hover {
+  text-decoration: underline;
+}
+
+.warning-text {
+  display: none;
+  color: rgb(255, 0, 0);
+}
+
+.submit {
+  background: var(--c2);
+
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  border-radius: 5px;
+
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.submit:disabled {
+  background: #556277d2;
+}
+
+.submit:hover {
+  scale: 1.01;
+  transition: all .08s ease-in-out;
+}
+
+.show-password {
+  display: none;
+  position: absolute;
+
+  right: 15px;
+  bottom: 143px;
+
+  font-size: 23px;
+
+  opacity: .65;
+}
+
+.visible {
+  display: inline;
+}

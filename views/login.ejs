@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/auth_style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>Login</h2>
+      <form class="form" action="/login" method="post">
+        <input type="text" placeholder="Enter your login" name="login" value="<%= login %>" required />
+        <p id="login-warn" class="warning-text <%= incorrectPassword %>">Incorrect password!</p>
+        <input type="password" placeholder="Enter password" name="password" id="passwordField" required />
+        <ion-icon class="show-password visible" name="eye-outline" onclick="displayVisible('ion-icon')"></ion-icon>
+        <ion-icon id="ion-icon" class="show-password" name="eye-off-outline" onclick="displayVisible('ion-icon')"></ion-icon>
+        <div>
+          <div class="checkbox">
+            <input type="checkbox" name="rememberMe" />
+            <p>Remember me</p>
+          </div>
+          <a href="#">Forgot password</a>
+        </div>
+        <input class="submit" type="submit" value="Sign in" />
+        <p>Don't have an account? <a href="/register">Create account</a></p>
+      </form>
+    </div>
+    <script>
+      function displayVisible(id) {
+        const element = document.getElementById(id)
+        if (element.style.display === 'none') {
+          document.getElementById('passwordField').type = 'text'
+          element.style.display = 'inline'
+        } else {
+          document.getElementById('passwordField').type = 'password'
+          element.style.display = 'none'
+        }
+      }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
+

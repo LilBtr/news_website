@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration</title>
+    <link rel="stylesheet" href="/stylesheets/auth_style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>Registration</h2>
+      <form class="form" action="/register" method="post">
+        <p id="already-warn" class="warning-text <%= similarLogin %>">This login already exists!</p>
+        <p id="login-warn" class="warning-text">Minimum 3 letters!</p>
+        <input type="text" placeholder="Enter your login" name="login" value="<%= login %>" id="login" required />
+        <p id="password-warn" class="warning-text">Minimum 8 symbols!</p>
+        <input type="password" placeholder="Create password" name="password" id="password" required />
+        <p id="confirm-warn" class="warning-text">Passwords are not similar!</p>
+        <input type="password" placeholder="Confirm password" name="confirmPassword" id="confirmPassword" required />
+        <div>
+          <div class="checkbox">
+            <input type="checkbox" name="agreement" required />
+            <p>I accept all terms & conditions</p>
+            <ion-icon class="warning-text <%= agreement %>" name="alert-outline"></ion-icon>
+          </div>
+        </div>
+        <input id="submit" class="submit" type="submit" value="Sign up" disabled />
+        <p>Already have an account? <a href="/login">Login now</a></p>
+      </form>
+    </div>
+    <script>
+      const password = document.getElementById('password')
+      const confirmPassword = document.getElementById('confirmPassword')
+      const login = document.getElementById('login')
+
+      function badInput(element) {
+        document.getElementById(`${element}-warn`).style.display = 'inline'
+        document.getElementById('submit').disabled = true
+      }
+
+      function displayNone(element) {
+        document.getElementById(`${element}-warn`).style.display = 'none'
+      }
+
+      function checkInput() {
+        if (login.value.length >= 3) {
+          displayNone('login')
+          if (password.value.length >= 8) {
+            displayNone('password')
+            if (password.value === confirmPassword.value) {
+              displayNone('confirm')
+              document.getElementById('submit').disabled = false
+            } else {
+              badInput('confirm')
+            }
+          } else {
+            badInput('password')
+          }
+        } else {
+          badInput('login')
+        }
+      }
+      
+      login.addEventListener('input', () => {
+        document.getElementById('already-warn').style.display = 'none'
+        checkInput()
+      })
+      confirmPassword.addEventListener('input', checkInput)
+      password.addEventListener('input', checkInput)
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
+
