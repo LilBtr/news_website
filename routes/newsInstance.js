@@ -7,7 +7,20 @@ const NewsDatabase = require('../helpers/newsDatabase')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  NewsDatabase.addNews(true, true, false)
+  NewsDatabase.addNews('THIS IS TITLE', 'https://assets.entrepreneur.com/content/3x2/2000/20200429211042-GettyImages-1164615296.jpeg', 
+  `loremLorem, ipsum dolor sit amet consectetur adipisicing elit. Libero quaerat, ratione earum, quisquam
+  necessitatibus voluptas culpa similique, quia harum accusamus soluta numquam error non laboriosam!
+  Repudiandae dolorum repellat culpa quaerat.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero quaerat, ratione earum, quisquam
+  necessitatibus voluptas culpa similique, quia harum accusamus soluta numquam error non laboriosam!
+  Repudiandae dolorum repellat culpa quaerat.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero quaerat, ratione earum, quisquam
+  necessitatibus voluptas culpa similique, quia harum accusamus soluta numquam error non laboriosam!
+  Repudiandae dolorum repellat culpa quaerat.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero quaerat, ratione earum, quisquam
+  necessitatibus voluptas culpa similique, quia harum accusamus soluta numquam error non laboriosam!
+  Repudiandae dolorum repellat culpa quaerat.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero quaerat, ratione earum, quisquam
+  necessitatibus voluptas culpa similique, quia harum accusamus soluta numquam error non laboriosam!
+  Repudiandae dolorum repellat culpa quaerat.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero quaerat, ratione earum, quisquam
+  necessitatibus voluptas culpa similique, quia harum accusamus soluta numquam error non laboriosam!
+  Repudiandae dolorum repellat culpa quaerat.`)
   res.render('newsInstance', NewsDatabase.getNews(req.query.postid))
 })
 
