@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="#">LOGO</a>
+        </div>
+        <button type="button" class="nav-toggler">
+          <span></span>
+        </button>
+        <nav class="nav">
+          <ul>
+            <li><a href="#" class="active">home</a></li>
+            <li><a href="#">about</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h2>Новости</h2>
+        <p>hh:mm date</p>
+        <ul id="list">
+          <li>
+            <div class="news-content">
+              <img
+                src="https://assets.entrepreneur.com/content/3x2/2000/20200429211042-GettyImages-1164615296.jpeg"
+                alt="photo"
+              />
+              <div id="req" key="1" class="content">
+                <h3>news N1</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero quaerat, ratione earum, quisquam
+                  necessitatibus voluptas culpa similique, quia harum accusamus soluta numquam error non laboriosam!
+                  Repudiandae dolorum repellat culpa quaerat.
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <script>
+      const requester = document.getElementById('list')
+      requester.onclick = (e) => {
+        document.location.href = `/news?postid=${e.target.attributes.key.value}`
+      }
+
+      const navToggler = document.querySelector('.nav-toggler')
+      navToggler.addEventListener('click', navToggle)
+
+      function navToggle() {
+        navToggler.classList.toggle('active')
+        const nav = document.querySelector('.nav')
+        nav.classList.toggle('open')
+        if (nav.classList.contains('open')) {
+          nav.style.maxHeight = nav.scrollHeight + 'px'
+        } else {
+          nav.removeAttribute('style')
+        }
+      }
+    </script>
+  </body>
+</html>
+

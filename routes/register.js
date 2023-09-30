@@ -1,5 +1,5 @@
 var express = require('express')
-const DatabaseManager = require('../helpers/databasemanager')
+const DatabaseManager = require('../helpers/usersDatabase')
 var router = express.Router()
 
 /* GET home page. */
