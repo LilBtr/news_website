@@ -25,32 +25,44 @@
       <section>
         <h2>Новости</h2>
         <p>hh:mm date</p>
-        <ul id="list">
-          <li>
-            <div class="news-content">
-              <img
-                src="https://assets.entrepreneur.com/content/3x2/2000/20200429211042-GettyImages-1164615296.jpeg"
-                alt="photo"
-              />
-              <div data-index="1" class="content">
-                <h3>news N1</h3>
-                <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero quaerat, ratione earum, quisquam
-                  necessitatibus voluptas culpa similique, quia harum accusamus soluta numquam error non laboriosam!
-                  Repudiandae dolorum repellat culpa quaerat.
-                </p>
-              </div>
-            </div>
-          </li>
-        </ul>
+        <ul id="list"></ul>
       </section>
     </main>
 
     <script>
-      const requester = document.getElementById('list')
-      requester.onclick = (e) => {
+      const newsList = document.getElementById('list')
+
+      async function getNewsList() {
+        const url = '/'
+        const data = {
+          action: 'getNewsList',
+        }
+
+        const response = await fetch(url, {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            for (let object of data) {
+              renderContent(object)
+            }
+          })
+      }
+
+      getNewsList()
+
+      function renderContent(object) {
+        newsList.insertAdjacentHTML('afterbegin', newsBlockTemplate(object.id, object.title, object.image, object.text))
+      }
+
+      newsList.onclick = (e) => {
+        console.log(e)
         const dataIndex = e.target.dataset.index
-        if (dataIndex !== undefined) {
+        if (dataIndex) {
           document.location.href = `/news?postid=${dataIndex}`
         }
       }
@@ -67,6 +79,23 @@
         } else {
           nav.removeAttribute('style')
         }
+      }
+
+      function newsBlockTemplate(index, title, image, text) {
+        return `
+        <li>
+            <div data-index="${index}" class="news-content">
+              <img
+                src="${image}"
+                alt="photo"
+              />
+              <div class="content">
+                <h3>${title}</h3>
+                <p>${text}</p>
+              </div>
+            </div>
+          </li>
+      `
       }
     </script>
   </body>

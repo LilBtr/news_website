@@ -1,17 +1,21 @@
 class NewsDatabase {
-  static #news = []
+  static news = []
   static #idCounter = 1
 
   static addNews(title, image, text) {
-    NewsDatabase.#news.push(new News(NewsDatabase.#idCounter++, title, image, text))
+    NewsDatabase.news.push(new News(NewsDatabase.#idCounter++, title, image, text))
   }
 
   static getNews(id) {
-    for (let i of NewsDatabase.#news) {
-			if (i.id == id) {
-				return i
-			}
-		}
+    for (let i of NewsDatabase.news) {
+      if (i.id == id) {
+        return i
+      }
+    }
+  }
+
+  static getNewsList() {
+    return NewsDatabase.news
   }
 }
 
