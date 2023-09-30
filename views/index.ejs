@@ -32,7 +32,7 @@
                 src="https://assets.entrepreneur.com/content/3x2/2000/20200429211042-GettyImages-1164615296.jpeg"
                 alt="photo"
               />
-              <div id="req" key="1" class="content">
+              <div data-index="1" class="content">
                 <h3>news N1</h3>
                 <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero quaerat, ratione earum, quisquam
@@ -49,7 +49,10 @@
     <script>
       const requester = document.getElementById('list')
       requester.onclick = (e) => {
-        document.location.href = `/news?postid=${e.target.attributes.key.value}`
+        const dataIndex = e.target.dataset.index
+        if (dataIndex !== undefined) {
+          document.location.href = `/news?postid=${dataIndex}`
+        }
       }
 
       const navToggler = document.querySelector('.nav-toggler')
