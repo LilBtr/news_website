@@ -3,9 +3,30 @@
   <head>
     <title><%= title %></title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/news_style.css" />
   </head>
   <body>
-    
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="#">LOGO</a>
+        </div>
+        <button type="button" class="nav-toggler">
+          <span></span>
+        </button>
+        <nav class="nav">
+          <ul>
+            <li><a href="#" class="active">home</a></li>
+            <li><a href="#">about</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <h1><%= title %></h1>
+      <img src="<%= image %>" alt="picture">
+      <p><%= text %></p>
+    </main>
   </body>
 </html>
 
