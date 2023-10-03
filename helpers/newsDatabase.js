@@ -17,6 +17,14 @@ class NewsDatabase {
   static getNewsList() {
     return NewsDatabase.news
   }
+
+  static removeNews(id) {
+    for (let i = 0; i < NewsDatabase.news.length; i++) {
+      if (NewsDatabase.news[i].id == id) {
+        NewsDatabase.news.splice(i, 1)
+      }
+    }
+  }
 }
 
 class News {

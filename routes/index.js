@@ -12,7 +12,13 @@ router.get('/', function (req, res, next) {
 })
 
 router.post('/', urlencodedParser, function (req, res, next) {
-  res.send(JSON.stringify(NewsDatabase.getNewsList()))
+  if (req.body.action === 'getNewsList') {
+    res.send(JSON.stringify(NewsDatabase.getNewsList()))
+  }
+  if (req.body.action === 'removeNews') {
+    NewsDatabase.removeNews(req.body.id)
+    res.send(JSON.stringify({status: 'OK'}))
+  }
 })
 
 module.exports = router
