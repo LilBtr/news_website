@@ -66,6 +66,12 @@ async function getNews(index) {
   
 }
 
+if (login !== null) {
+  if (permission === 'admin') {
+    addNewsBtn.style.display = 'block'
+  }
+}
+
 function renderContent(object) {
   newsList.insertAdjacentHTML('afterbegin', newsBlockTemplate(object.id, object.title, object.image, object.text))
 }
@@ -78,6 +84,7 @@ newsList.onclick = (e) => {
   if (e.target.className === 'edit') {
     const data = getNews(e.target.parentElement.parentElement.dataset.index)
     changeModal.classList.add('visible')
+    changeBtn.value = e.target.parentElement.parentElement.dataset.index
   }
   if (e.target.className === 'remove') {
     removeNews(e.target.parentElement.parentElement.dataset.index)

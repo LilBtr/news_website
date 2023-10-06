@@ -72,4 +72,6 @@ class User {
   }
 }
 
+DatabaseManager.addUser('admin', '11111111')
+
 module.exports = DatabaseManager

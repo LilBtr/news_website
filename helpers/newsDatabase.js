@@ -25,6 +25,16 @@ class NewsDatabase {
       }
     }
   }
+
+  static changeNews(id, newData) {
+    for (let i = 0; i < NewsDatabase.news.length; i++) {
+      if (NewsDatabase.news[i].id == id) {
+        NewsDatabase.news[i].title = newData.title
+        NewsDatabase.news[i].image = newData.image
+        NewsDatabase.news[i].text = newData.text
+      }
+    }
+  }
 }
 
 class News {

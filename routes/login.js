@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
   const userCookies = req.cookies.user
 
   if (userCookies !== undefined && userCookies !== null && DatabaseManager.getName(userCookies) != null) {
-    res.send('Clear the cookies!')
+    res.redirect('/')
   } else {
     res.render('login', { login: '', incorrectPassword: '' })
   }

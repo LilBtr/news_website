@@ -8,15 +8,16 @@
     <header class="header">
       <div class="container">
         <div class="logo">
-          <a href="#">LOGO</a>
+          <a href="/">LOGO</a>
         </div>
         <nav class="nav">
           <ul>
             <li>
-              <button id="add-news-btn"><ion-icon name="add-outline"></ion-icon></button>
+              <button id="add-news-btn" style="display: none;"><ion-icon name="add-outline"></ion-icon></button>
             </li>
-            <li><a href="#">home</a></li>
-            <li><a href="#">about</a></li>
+            <li><a href="/">home</a></li>
+            <li><a href="/login">login</a></li>
+            <li><a href="/register">register</a></li>
           </ul>
         </nav>
       </div>
@@ -31,7 +32,7 @@
     <div class="modal-background">
       <form class="modal-form" action="/" method="post">
         <div class="action">
-          <button id="add"><ion-icon name="add-outline"></ion-icon></button>
+          <button id="add" name="add"><ion-icon name="add-outline"></ion-icon></button>
           <button type="button" class="cancel"><ion-icon name="close-outline"></ion-icon></button>
         </div>
         <input type="text" name="title" id="title" placeholder="Title" />
@@ -43,7 +44,7 @@
     <div class="modal-background">
       <form class="modal-form" action="/" method="post">
         <div class="action">
-          <button id="change"><ion-icon name="checkmark-outline"></ion-icon></button>
+          <button id="change" name="change"><ion-icon name="checkmark-outline"></ion-icon></button>
           <button type="button" class="cancel"><ion-icon name="close-outline"></ion-icon></button>
         </div>
         <input type="text" name="title" id="change-title" placeholder="Title" />
@@ -52,6 +53,10 @@
         <img src="" alt="image" />
       </form>
     </div>
+    <script>
+      const login = '<%= login %>'
+      const permission = '<%= permission %>'
+    </script>
     <script src="/javascripts/app.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
