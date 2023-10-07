@@ -69,6 +69,8 @@ async function getNews(index) {
 if (login !== null) {
   if (permission === 'admin') {
     addNewsBtn.style.display = 'block'
+  } else {
+    addNewsBtn.style.display = 'none'
   }
 }
 
@@ -114,10 +116,10 @@ function newsBlockTemplate(index, title, image, text) {
 				<p>${text}</p>
 			</div>
 		</div>
-		<div class="actions">
+    ${permission === 'admin' ? `<div class="actions">
 			<button class="edit"><ion-icon name="pencil-outline" size="large"></ion-icon></button>
 			<button class="remove"><ion-icon name="trash-outline" size="large"></ion-icon></button>
-		</div>
+		</div>` : ''}
 	</div>
 </li>`
 }

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/auth_style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h2>Login</h2>
+      <form class="form" action="/login" method="post">
+        <p id="login-warn" class="warning-text <%= incorrectLogin %>">Such user does not exist!</p>
+        <input type="text" placeholder="Enter your login" name="login" required />
+        <input type="text" placeholder="Your password" name="password" id="passwordField" disabled />
+        <input class="submit" type="submit" value="Restore" />
+        <p>Don't have an account? <a href="/register">Create account</a></p>
+      </form>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
+
