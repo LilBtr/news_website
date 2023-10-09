@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
 :root {
-  --c1: #5F93CF;
-  --c2: #4285F4;
+  --c1: #5f93cf;
+  --c2: #4285f4;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -29,7 +29,7 @@ body {
   max-width: 400px;
   width: 100%;
 
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .wrapper h2 {
@@ -66,14 +66,14 @@ body {
 
 .form div p {
   font-weight: 500;
-  font-size: .9em;
-  opacity: .8;
+  font-size: 0.9em;
+  opacity: 0.8;
 }
 
 .form div a {
   font-weight: 500;
-  font-size: .9em;
-  opacity: .99;
+  font-size: 0.9em;
+  opacity: 0.99;
 }
 
 .form > input {
@@ -82,7 +82,7 @@ body {
   margin-bottom: 15px;
   padding: 10px 15px;
 
-  border: 1px solid rgba(0,0,0,0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   border-bottom-width: 2px;
   border-radius: 5px;
 }
@@ -90,14 +90,14 @@ body {
 .form > input:focus {
   border-color: var(--c1);
   outline: none;
-  transition: border .3s ease;
+  transition: border 0.3s ease;
 }
 
 .form > p {
   font-weight: 500;
-  font-size: .85em;
+  font-size: 0.85em;
   text-align: center;
-  opacity: .99;
+  opacity: 0.99;
 }
 
 .form > p a {
@@ -134,21 +134,22 @@ body {
 
 .submit:hover {
   scale: 1.01;
-  transition: all .08s ease-in-out;
+  transition: all 0.08s ease-in-out;
 }
 
 .show-password {
   display: none;
   position: absolute;
 
-  right: 15px;
-  bottom: 143px;
+  right: 0.9375rem;
+  bottom: 8.875rem;
 
-  font-size: 23px;
+  font-size: 1.4375rem;
 
-  opacity: .65;
+  opacity: 0.65;
 }
 
 .visible {
   display: inline;
 }
+

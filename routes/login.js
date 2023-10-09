@@ -20,13 +20,16 @@ router.post('/', function (req, res, next) {
 
   if (DatabaseManager.checkLogin(login)) {
     if (DatabaseManager.checkUser(login, password)) {
-      if (req.body.rememberMe === 'on') {
+      if (req.body['rememberMe'] !== undefined) {
         const id = makeid(20)
         DatabaseManager.setID(login, password, login + id)
         res.cookie('user', login + id)
         res.redirect('/login')
-      } else {
-        res.send('You are Authorized')
+      } else if (req.body['rememberMe'] === undefined) {
+        const id = makeid(20)
+        DatabaseManager.setID(login, password, login + id)
+        res.cookie('user', login + id, {maxAge: 3600})
+        res.redirect('login')
       }
     } else {
       res.render('login', { login: login, incorrectPassword: 'visible' })

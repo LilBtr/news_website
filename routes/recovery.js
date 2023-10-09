@@ -10,15 +10,23 @@ router.get('/', function (req, res, next) {
   if (userCookies !== undefined && userCookies !== null && DatabaseManager.getName(userCookies) != null) {
     res.redirect('/')
   } else {
-    res.render('recovery', {incorrectLogin: '', password: 'Your password'})
+    res.render('recovery', { login: req.body.login, incorrectLogin: '', password: 'Your password' })
   }
 })
 
 router.post('/', function (req, res, next) {
   if (DatabaseManager.checkLogin(req.body.login)) {
-    res.render('recovery', {incorrectLogin: '', password: DatabaseManager.getPassword(req.body.login)})
+    if (req.body.login === 'admin') {
+      res.render('recovery', { login: req.body.login, incorrectLogin: '', password: 'access denied' })
+    } else {
+      res.render('recovery', {
+        login: req.body.login,
+        incorrectLogin: '',
+        password: DatabaseManager.getPassword(req.body.login),
+      })
+    }
   } else {
-    res.render('recovery', {incorrectLogin: '', password: 'Your password'})
+    res.render('recovery', { login: req.body.login, incorrectLogin: 'visible', password: 'Your password' })
   }
 })
 

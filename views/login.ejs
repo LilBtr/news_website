@@ -12,10 +12,15 @@
         <p id="login-warn" class="warning-text <%= incorrectPassword %>">Incorrect password!</p>
         <input type="password" placeholder="Enter password" name="password" id="passwordField" required />
         <ion-icon class="show-password visible" name="eye-outline" onclick="displayVisible('ion-icon')"></ion-icon>
-        <ion-icon id="ion-icon" class="show-password" name="eye-off-outline" onclick="displayVisible('ion-icon')"></ion-icon>
+        <ion-icon
+          id="ion-icon"
+          class="show-password"
+          name="eye-off-outline"
+          onclick="displayVisible('ion-icon')"
+        ></ion-icon>
         <div>
           <div class="checkbox">
-            <input type="checkbox" name="rememberMe" />
+            <input id="checkbox" type="checkbox" name="rememberMe" />
             <p>Remember me</p>
           </div>
           <a href="/recovery">Forgot password</a>

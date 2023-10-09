@@ -2,6 +2,10 @@ const newsList = document.getElementById('list')
 const changeBtn = document.getElementById('change')
 const cancelBtn = document.getElementsByClassName('cancel')
 const addNewsBtn = document.getElementById('add-news-btn')
+const imageInput = document.getElementById('image')
+const changeImageInput = document.getElementById('change-image')
+const imagePreview = document.getElementById('image-preview')
+const changeImagePreview = document.getElementById('change-image-preview')
 const addModal = document.getElementsByClassName('modal-background')[0]
 const changeModal = document.getElementsByClassName('modal-background')[1]
 
@@ -123,5 +127,12 @@ function newsBlockTemplate(index, title, image, text) {
 	</div>
 </li>`
 }
+
+imageInput.addEventListener('input', (e) => {
+  imagePreview.src = `${e.target.value}`
+})
+changeImageInput.addEventListener('input', (e) => {
+  changeImagePreview.src = `${e.target.value}`
+})
 
 getNewsList()

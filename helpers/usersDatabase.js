@@ -13,11 +13,11 @@ class DatabaseManager {
   }
   static checkLogin(login) {
     for (let user of DatabaseManager.#users) {
-        if (user.checkLogin(login)) {
-          return true
-        }
+      if (user.checkLogin(login)) {
+        return true
       }
-      return false
+    }
+    return false
   }
   static getPassword(login) {
     for (let user of DatabaseManager.#users) {
@@ -41,12 +41,19 @@ class DatabaseManager {
       }
     }
   }
+  static getID(login) {
+    for (let user of DatabaseManager.#users) {
+      if (user.checkLogin(login)) {
+        return user.id
+      }
+    }
+  }
 }
 
 class User {
   #login = null
   #password = null
-  #id = null
+  id = null
   constructor(login, password) {
     this.#login = login
     this.#password = password
@@ -62,13 +69,13 @@ class User {
     return null
   }
   set id(value) {
-    this.#id = value
+    this.id = value
   }
   get login() {
     return this.#login
   }
   checkID(id) {
-    return this.#id === id
+    return this.id === id
   }
 }
 
