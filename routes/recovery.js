@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
   if (userCookies !== undefined && userCookies !== null && DatabaseManager.getName(userCookies) != null) {
     res.redirect('/')
   } else {
-    res.render('recovery', { login: req.body.login, incorrectLogin: '', password: 'Your password' })
+    res.render('recovery', { login: req.body.login, incorrectLogin: '', password: 'Ждите пароль...' })
   }
 })
 
@@ -26,7 +26,7 @@ router.post('/', function (req, res, next) {
       })
     }
   } else {
-    res.render('recovery', { login: req.body.login, incorrectLogin: 'visible', password: 'Your password' })
+    res.render('recovery', { login: req.body.login, incorrectLogin: 'visible', password: 'Ждите пароль...' })
   }
 })
 

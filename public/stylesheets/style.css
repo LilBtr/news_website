@@ -49,7 +49,7 @@ ion-icon {
 }
 
 .header .logo a {
-  font-size: 30px;
+  font-size: 1.875rem;
   color: #ffffff;
 }
 
@@ -60,7 +60,7 @@ ion-icon {
 
 .header .nav ul li a {
   display: block;
-  font-size: 16px;
+  font-size: 1rem;
   color: #ffffff;
   padding: 10px 0;
   transition: all 0.5s ease;
@@ -95,9 +95,13 @@ main section p {
   max-height: 275px;
 }
 
+.news-wrapper > p {
+  align-self: flex-start;
+}
+
 .news-content {
   display: flex;
-  gap: 15px;
+  gap: .9375rem;
 
   max-height: 200px;
 
@@ -111,7 +115,7 @@ main section p {
 }
 
 .news-content .content {
-  gap: 15px;
+  gap: .9375rem;
   max-height: 130px;
   width: 100%;
 }
@@ -135,7 +139,7 @@ main section p {
 .actions {
   display: flex;
   justify-content: center;
-  gap: 5px;
+  gap: .3125rem;
   width: 100%;
 }
 
@@ -192,31 +196,62 @@ main section p {
   display: flex;
   flex-direction: column;
 
-  background: #aaa9a9;
+  background: #202124;
+
+  border: 2px solid #fff;
   border-radius: 20px;
-  width: 600px;
+
+  width: 37.5rem;
   max-width: 100%;
-  height: 500px;
+  height: 31.25rem;
   transition: transform 0.15s ease 0s, opacity 0.15s ease 0s;
   transform: scale(1);
 }
 
 .modal-form .action {
   display: inline-flex;
-  justify-content: center;
-  gap: 5px;
+  justify-content: space-between;
+  gap: .3125rem;
 
   margin: 7px;
 }
 
 .modal-form .action button {
+  border: 1px solid #ffffffc5;
+  border-radius: 20px;
+
+
   text-align: center;
   width: 100%;
 }
 
+.modal-form .action .cancel:hover {
+  background: #f00;
+  transition: all .45s ease;
+}
+
+.modal-form .action #add:hover {
+  background: #32a032;
+  transition: all .45s ease;
+}
+
+.modal-form .action #change:hover {
+  background: #f3a93d;
+  transition: all .45s ease;
+}
+
 .modal-form input {
+  border: 1px solid #ffffffc5;
+  border-radius: 20px;
+
   margin: 10px;
   padding: 4px;
+}
+
+.modal-form img {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
 }
 
 .visible {
@@ -262,8 +297,8 @@ main section p {
   border-radius: 20px;
   background: #3a3939;
   position: absolute;
-  right: 13px;
-  top: 50px;
+  right: .8125rem;
+  top: 3.125rem;
 }
 
 .profile ul li {

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Login</title>
+    <title>Восстановление</title>
     <link rel="stylesheet" href="/stylesheets/auth_style.css" />
   </head>
   <body>
     <div class="wrapper">
-      <h2>Login</h2>
+      <h2>Восстановление пароля</h2>
       <form class="form" action="/recovery" method="post">
-        <p id="login-warn" class="warning-text <%= incorrectLogin %>">Such user does not exist!</p>
-        <input type="text" placeholder="Enter your login" name="login" value="<%= login %>" required />
-        <input type="text" placeholder="Your password" name="password" id="passwordField" value="<%= password %>" disabled />
-        <input class="submit" type="submit" value="Restore" />
-        <p><a href="/login">Login</a> or <a href="/register">Create account</a></p>
+        <p id="login-warn" class="warning-text <%= incorrectLogin %>">Такого пользователя не существует!</p>
+        <input type="text" placeholder="Введите логин" name="login" value="<%= login %>" required />
+        <input type="text" placeholder="Ждите пароль..." name="password" id="passwordField" value="<%= password %>" disabled />
+        <input class="submit" type="submit" value="Восстановить" />
+        <p><a href="/login">Вход</a> или <a href="/register">Регистрация</a></p>
       </form>
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

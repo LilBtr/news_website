@@ -42,6 +42,8 @@ class News {
   title = null
   image = null
   text = null
+  fullDate = new Date()
+  dateTime = `${this.fullDate.getHours()}:${this.fullDate.getMinutes()}  ${this.fullDate.getDate()}-${this.fullDate.getMonth()}-${this.fullDate.getFullYear()}`
 
   constructor(id, title, image, text) {
     this.id = id

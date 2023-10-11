@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Login</title>
+    <title>Вход</title>
     <link rel="stylesheet" href="/stylesheets/auth_style.css" />
   </head>
   <body>
     <div class="wrapper">
-      <h2>Login</h2>
+      <h2>Вход</h2>
       <form class="form" action="/login" method="post">
-        <input type="text" placeholder="Enter your login" name="login" value="<%= login %>" required />
-        <p id="login-warn" class="warning-text <%= incorrectPassword %>">Incorrect password!</p>
-        <input type="password" placeholder="Enter password" name="password" id="passwordField" required />
+        <input type="text" placeholder="Введите ваш логин" name="login" value="<%= login %>" required />
+        <p id="login-warn" class="warning-text <%= incorrectPassword %>">Неправильный пароль!</p>
+        <input type="password" placeholder="Введите пароль" name="password" id="passwordField" required />
         <ion-icon class="show-password visible" name="eye-outline" onclick="displayVisible('ion-icon')"></ion-icon>
         <ion-icon
           id="ion-icon"
@@ -21,12 +21,12 @@
         <div>
           <div class="checkbox">
             <input id="checkbox" type="checkbox" name="rememberMe" />
-            <p>Remember me</p>
+            <p>Запомнить меня!</p>
           </div>
-          <a href="/recovery">Forgot password</a>
+          <a href="/recovery">Забыли пароль?</a>
         </div>
-        <input class="submit" type="submit" value="Sign in" />
-        <p>Don't have an account? <a href="/register">Create account</a></p>
+        <input class="submit" type="submit" value="Войти" />
+        <p>У вас нет аккаунта? <a href="/register">Регистрация</a></p>
       </form>
     </div>
     <script>

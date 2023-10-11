@@ -79,7 +79,7 @@ if (login !== null) {
 }
 
 function renderContent(object) {
-  newsList.insertAdjacentHTML('afterbegin', newsBlockTemplate(object.id, object.title, object.image, object.text))
+  newsList.insertAdjacentHTML('afterbegin', newsBlockTemplate(object.id, object.title, object.image, object.text, object.dateTime))
 }
 
 newsList.onclick = (e) => {
@@ -110,9 +110,10 @@ cancelBtn[1].onclick = (e) => {
   e.target.parentElement.parentElement.parentElement.classList.remove('visible')
 }
 
-function newsBlockTemplate(index, title, image, text) {
+function newsBlockTemplate(index, title, image, text, dateTime) {
   return `<li>
 	<div class="news-wrapper" data-index="${index}">
+    <p>${dateTime}</p>
 		<div class="news-content">
 			<img src="${image}" alt="photo" />
 			<div class="content">
