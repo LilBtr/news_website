@@ -83,6 +83,10 @@ main section p {
   opacity: 0.7;
 }
 
+#list > li {
+  margin-bottom: 1rem;
+}
+
 .news-wrapper {
   display: flex;
   flex-direction: column;
